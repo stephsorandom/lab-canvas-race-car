@@ -55,6 +55,26 @@ class Car {
 let ford = new Car()
 ford.draw()
 
+class Obsticle {
+  constructor (x, y, w, h, color){
+  this.x = x
+  this.y = y
+  this.w = w
+  this.h = h
+  this.color = color
+}
+ draw() {
+   ctx.fillstyle = this.color
+   ctx.fillRect(this.x, this.y, this.w, this.h)
+ }
+}
+let box = new Obsticle(50, 50, 30, 60, "orange")
+box.draw()
+
+
+
+
+
 
 
 //redraws canvas on every animation pixel
@@ -69,9 +89,11 @@ function animate() {
   ctx.drawImage(roadImg, 0, 0, 450, 600)
   //calls function to draw
   ford.draw()
-
+  box.draw()
 }
 animate()
+
+
 
 
 // CONTROL KEYS 
@@ -95,7 +117,6 @@ window.onkeydown = function(e) {
 
 
 //ITERATION 4
-
 
 
 
